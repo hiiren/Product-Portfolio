@@ -35,6 +35,25 @@ Using vibe coding (Claude, Antigravity, Gemini AI Studio), I have independently 
 
 ---
 
+## Full Product Requirement Documents (PRDs)
+
+Each product also has a detailed PRD slide deck covering executive summary, personas, market analysis, competitive landscape, RICE prioritisation, roadmap, and impact estimation.
+
+| # | PRD | Pages |
+|---|-----|-------|
+| 01 | [AI Marketing Compliance Platform](./prds/01-AI-Marketing-Compliance-Platform.pdf) | 10 slides |
+| 02 | [Laundry POS & Management System](./prds/02-Laundry-POS-Management-System.pdf) | 10 slides |
+| 03 | [Live Stock Options Trading Scanner](./prds/03-Live-Stock-Options-Trading-Scanner.pdf) | 10 slides |
+| 04 | [AI Astrology Dashboard](./prds/04-AI-Astrology-Dashboard.pdf) | 10 slides |
+| 05 | [Trading Education Landing Page](./prds/05-Trading-Education-Landing-Page.pdf) | 10 slides |
+| 06 | [Field Service Management Platform](./prds/06-Field-Service-Management-Platform.pdf) | 8 slides |
+| 07 | [SaaS Dashboard UX Redesign](./prds/07-SaaS-Dashboard-UX-Redesign.pdf) | 10 slides |
+| 08 | [EdTech Student Communication Platform](./prds/08-EdTech-Student-Communication-Platform.pdf) | 10 slides |
+| 09 | [Compliance QA Simulation Tool](./prds/09-Compliance-QA-Simulation-Tool.pdf) | 10 slides |
+| 10 | [Business Process Automation (n8n)](./prds/10-Business-Process-Automation-n8n.pdf) | 10 slides |
+
+---
+
 ## Impact by Numbers
 
 | Metric | Result | Product |
