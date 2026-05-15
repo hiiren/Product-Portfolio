@@ -91,7 +91,6 @@ export const caseStudies: CaseStudy[] = [
       { src: '/images/case-studies/fuds-digital-platform/gallery-03.png', alt: 'Service listing page', caption: 'Service detail page with upfront pricing and technician credentials' },
     ],
     liveUrl: 'https://fuds.in',
-    figmaUrl: 'https://www.figma.com/proto/fuds-digital-platform',
     wireframes: [
       { src: '/images/case-studies/fuds-digital-platform/wireframes/wireframe-01.png', alt: 'Homepage wireframe', caption: 'Initial wireframe exploring information architecture' },
       { src: '/images/case-studies/fuds-digital-platform/wireframes/wireframe-02.png', alt: 'Booking flow wireframe', caption: 'Booking flow iterations to reduce friction' },
@@ -146,7 +145,6 @@ export const caseStudies: CaseStudy[] = [
     ],
     liveUrl: 'https://admin.fuds.in',
     embedUrl: 'https://admin.fuds.in',
-    figmaUrl: 'https://www.figma.com/proto/fuds-field-service',
     wireframes: [
       { src: '/images/case-studies/fuds-field-service-dashboard/wireframes/wireframe-01.png', alt: 'Dashboard wireframe', caption: 'Initial concept for the operations dashboard' },
       { src: '/images/case-studies/fuds-field-service-dashboard/wireframes/wireframe-02.png', alt: 'Order flow wireframe', caption: 'Order assignment flow before building' },
@@ -248,7 +246,9 @@ export const caseStudies: CaseStudy[] = [
       { src: '/images/case-studies/ai-marketing-compliance/gallery-01.png', alt: 'Compliance dashboard', caption: 'Dashboard showing scan status and violation overview' },
       { src: '/images/case-studies/ai-marketing-compliance/gallery-02.png', alt: 'Violation detection', caption: 'Bounding-box violation overlays on marketing assets' },
     ],
-    figmaUrl: 'https://www.figma.com/proto/ai-compliance-platform',
+    wireframes: [
+      { src: '/images/case-studies/ai-marketing-compliance/wireframes/wireframe-01.png', alt: 'Compliance scan flow wireframe', caption: 'Early wireframe exploring the compliance scanning user journey' },
+    ],
     techStack: ['Next.js 16', 'Python FastAPI', 'OpenCV', 'Tesseract OCR', 'AWS S3', 'Upstash Redis'],
     timeline: '4 weeks (PRD phase)',
     team: 'Solo (strategy + PRD)',
@@ -325,7 +325,6 @@ export const caseStudies: CaseStudy[] = [
     pdfFile: '/pdfs/06-SaaS-Dashboard-UX-Redesign.pdf',
     prdFile: '/pdfs/prds/07-SaaS-Dashboard-UX-Redesign.pdf',
     heroImage: '/images/case-studies/saas-dashboard-ux-redesign/hero.png',
-    figmaUrl: 'https://www.figma.com/proto/saas-dashboard-redesign',
     techStack: ['Figma', 'UX Research', 'Prototyping', 'Mobile-First Design'],
     timeline: '3 weeks',
     team: 'Solo (consultant)',
@@ -367,6 +366,15 @@ export const caseStudies: CaseStudy[] = [
     heroImage: '/images/case-studies/trading-education-landing/hero.png',
     liveUrl: 'https://trading-education.vercel.app',
     embedUrl: 'https://trading-education.vercel.app',
+    gallery: [
+      { src: '/images/case-studies/trading-education-landing/localhost_5173_.png', alt: 'Landing page hero section', caption: 'Hero section with AI capability claim and trust signals' },
+      { src: '/images/case-studies/trading-education-landing/localhost_5173_ (1).png', alt: 'Features and pricing section', caption: 'Feature showcase with AI demo card and two-tier pricing' },
+      { src: '/images/case-studies/trading-education-landing/localhost_5173_ (2).png', alt: 'AI demo section', caption: 'Live AI trade analysis demo showing sentiment and entry/exit levels' },
+    ],
+    wireframes: [
+      { src: '/images/case-studies/trading-education-landing/wireframes/wireframe-01.png', alt: 'Page flow wireframe', caption: 'Information architecture and 5-section conversion flow' },
+      { src: '/images/case-studies/trading-education-landing/wireframes/n8n_wireframe.png', alt: 'n8n automation workflow', caption: 'Backend automation workflow for lead capture and OTP verification' },
+    ],
     techStack: ['React 19', 'Vite 6', 'Firebase Auth', 'Firestore', 'Tailwind CSS 4'],
     timeline: '2 weeks',
     team: 'Solo',
@@ -407,6 +415,14 @@ export const caseStudies: CaseStudy[] = [
     pdfFile: '/pdfs/08-Laundry-POS-Management-System.pdf',
     prdFile: '/pdfs/prds/02-Laundry-POS-Management-System.pdf',
     heroImage: '/images/case-studies/laundry-pos-system/hero.png',
+    gallery: [
+      { src: '/images/case-studies/laundry-pos-system/Dashboard.png', alt: 'Morning Briefing dashboard', caption: 'Morning Briefing dashboard with orders due, revenue vs yesterday, and inventory alerts' },
+      { src: '/images/case-studies/laundry-pos-system/orders.png', alt: 'Order management', caption: 'Order list with status tracking and customer history' },
+      { src: '/images/case-studies/laundry-pos-system/agenticPOS.png', alt: 'Agentic Chat POS', caption: 'Natural language order entry via Agentic Chat POS interface' },
+    ],
+    wireframes: [
+      { src: '/images/case-studies/laundry-pos-system/wireframes/wireframe-01.png', alt: 'POS system wireframe', caption: 'Initial wireframe for the 4-step order wizard and POS layout' },
+    ],
     techStack: ['React 18', 'Vite 6', 'Framer Motion', 'Recharts', 'Claude API', 'jsPDF'],
     timeline: 'PRD phase only',
     team: 'Solo',
@@ -446,6 +462,14 @@ export const caseStudies: CaseStudy[] = [
     pdfFile: '/pdfs/09-AI-Astrology-Dashboard.pdf',
     prdFile: '/pdfs/prds/04-AI-Astrology-Dashboard.pdf',
     heroImage: '/images/case-studies/ai-astrology-dashboard/hero.png',
+    gallery: [
+      { src: '/images/case-studies/ai-astrology-dashboard/ai-astrology-dashboard.png', alt: 'Kundali chart with Dasha timeline', caption: 'Interactive kundali chart showing planet positions and Dasha timeline visualization' },
+      { src: '/images/case-studies/ai-astrology-dashboard/ai-astrology-dashboard-lalkitab.png', alt: 'Lalkitab interpretation', caption: 'Lalkitab system view with personalized remedy recommendations' },
+      { src: '/images/case-studies/ai-astrology-dashboard/ai-astrology-dashboard-vedic.png', alt: 'Vedic astrology view', caption: 'Vedic chart with house positions and AI-powered interpretation panel' },
+    ],
+    wireframes: [
+      { src: '/images/case-studies/ai-astrology-dashboard/wireframes/wireframe.png', alt: 'Astrology dashboard wireframe', caption: 'Layout wireframe for the astrology dashboard interface' },
+    ],
     techStack: ['Next.js 16', 'TypeScript', 'Zustand', 'Groq API', 'NASA JPL Ephemeris'],
     timeline: 'PRD phase only',
     team: 'Solo',
@@ -487,6 +511,15 @@ export const caseStudies: CaseStudy[] = [
     pdfFile: '/pdfs/10-EdTech-Student-Communication-Platform.pdf',
     prdFile: '/pdfs/prds/08-EdTech-Student-Communication-Platform.pdf',
     heroImage: '/images/case-studies/edtech-communication-platform/hero.png',
+    gallery: [
+      { src: '/images/case-studies/edtech-communication-platform/1-dashboard.png', alt: 'Cohort Chat dashboard', caption: 'Unified cohort dashboard with structured discussions by topic and week' },
+      { src: '/images/case-studies/edtech-communication-platform/2-doubt-feed.png', alt: 'AI Doubt Feed', caption: 'AI-powered doubt resolution — student posts, AI answers from course content, routes to peers if needed' },
+      { src: '/images/case-studies/edtech-communication-platform/3-study-room.png', alt: 'AI Study Room', caption: 'Pomodoro-aligned focused study sessions with AI check-ins and progress tracking' },
+    ],
+    wireframes: [
+      { src: '/images/case-studies/edtech-communication-platform/wireframes/wireframe-01.png', alt: 'Platform wireframe sketch', caption: 'Initial pencil sketch wireframe exploring the platform information architecture' },
+    ],
+    figmaUrl: 'https://www.figma.com/design/Ok4RYPQIDw7djmtZctZryN/Assignment?node-id=80-1193&t=vnxENS7KwIwmOx3i-1',
     techStack: ['Product Strategy', 'UX Design', 'AI Integration', 'Market Research'],
     timeline: 'PRD phase only',
     team: 'Solo',

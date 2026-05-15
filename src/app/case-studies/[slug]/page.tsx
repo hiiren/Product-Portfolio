@@ -44,7 +44,7 @@ export default async function CaseStudyPage({
   if (!study) notFound();
 
   const stats = [
-    ...study.results.slice(0, 4).map((r) => ({
+    ...study.results.slice(0, 5).map((r) => ({
       value: r.after,
       label: r.metric,
     })),
@@ -134,7 +134,7 @@ export default async function CaseStudyPage({
             {study.timeline && <span>Timeline: {study.timeline}</span>}
             {study.team && <span>Team: {study.team}</span>}
             {study.role.length > 0 && (
-              <span>Role: {study.role[0]}</span>
+              <span>Role: {study.role.join(', ')}</span>
             )}
           </div>
         </div>

@@ -84,7 +84,7 @@ export default function Home() {
               href="/case-studies"
               className="inline-flex items-center gap-1 text-sm font-semibold text-secondary transition-opacity hover:opacity-80"
             >
-              View all 10 case studies &rarr;
+              View all {caseStudies.length} case studies &rarr;
             </Link>
           </div>
         </div>

@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astrologie — Product Wireframe</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #1a1a2e;
+    --surface: #232340;
+    --surface2: #2a2a4a;
+    --border: #3a3a5a;
+    --text: #e8e8f0;
+    --text-muted: #8888aa;
+    --gold: #d4a843;
+    --gold-dim: #8b6914;
+    --purple: #7c4dff;
+    --blue: #3d5afe;
+    --orange: #FF6B35;
+    --red: #d32f2f;
+    --green: #388e3c;
+    --cyan: #00bcd4;
+    --flow: #d4a843;
+    --tag-bg: rgba(212, 168, 67, 0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-logo {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--purple), var(--blue));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .header h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: -0.3px;
+  }
+  .header-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--tag-bg);
+    color: var(--gold);
+    border: 1px solid rgba(212, 168, 67, 0.2);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .header-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    display: inline-block;
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 48px 32px 32px;
+  }
+  .hero h2 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--gold), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    max-width: 600px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .hero-meta span {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* FLOW INDICATOR */
+  .flow-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px 32px;
+  }
+  .flow-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .flow-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+  .flow-step.active {
+    background: rgba(212, 168, 67, 0.12);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .flow-step .num {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .flow-step.active .num {
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+  }
+  .flow-arrow {
+    font-size: 18px;
+    color: var(--gold);
+    opacity: 0.5;
+  }
+
+  /* WIREFRAME GRID */
+  .grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  /* SCREEN CARD */
+  .screen-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--surface);
+    transition: border-color 0.2s;
+  }
+  .screen-card:hover {
+    border-color: var(--gold);
+  }
+  .screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .screen-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .screen-title h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .screen-tag {
+    font-size: 10px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .screen-tag.route { background: rgba(0, 188, 212, 0.15); color: var(--cyan); border: 1px solid rgba(0, 188, 212, 0.2); }
+  .screen-tag.pm { background: rgba(212, 168, 67, 0.12); color: var(--gold); border: 1px solid rgba(212, 168, 67, 0.2); }
+  .screen-body {
+    padding: 24px;
+  }
+
+  /* WIREFRAME MOCK */
+  .mock {
+    width: 100%;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    background: var(--surface2);
+    overflow: hidden;
+    position: relative;
+  }
+  .mock-inner {
+    padding: 20px;
+  }
+
+  /* Login Mock */
+  .mock-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 360px;
+    position: relative;
+  }
+  .login-card {
+    width: 340px;
+    padding: 32px 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .login-orb {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    background: linear-gradient(135deg, var(--gold), var(--purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+  .login-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .login-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  .login-field {
+    text-align: left;
+    margin-bottom: 12px;
+  }
+  .login-field label {
+    display: block;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .login-field .input-box {
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .login-btn {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(124, 77, 255, 0.2), rgba(61, 90, 254, 0.15));
+    border: 1px solid rgba(212, 168, 67, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-top: 16px;
+  }
+
+  /* Mode Selector Mock */
+  .mock-mode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 360px;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .mode-orb {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--gold), var(--purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .mode-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .mode-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+  .mode-cards {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    max-width: 560px;
+  }
+  .mode-card {
+    flex: 1;
+    padding: 24px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, rgba(124, 77, 255, 0.08), rgba(61, 90, 254, 0.08));
+  }
+  .mode-card .icon { font-size: 32px; margin-bottom: 8px; }
+  .mode-card h4 { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+  .mode-card p { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+  .mode-card.lal {
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.08), rgba(124, 77, 255, 0.08));
+    border-color: rgba(255, 68, 68, 0.2);
+  }
+  .mode-card.lal h4 { color: var(--orange); }
+  .mode-tags {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .mode-tag {
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(212, 168, 67, 0.1);
+    color: var(--gold-dim);
+  }
+
+  /* Dashboard Mock */
+  .mock-dash {
+    position: relative;
+  }
+  .dash-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .dash-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dash-back {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(212, 168, 67, 0.1);
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .dash-mode-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(124, 77, 255, 0.12);
+    color: var(--gold);
+  }
+  .dash-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Chart Panel */
+  .chart-panel {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    background: var(--surface);
+  }
+  .chart-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .svg-grid {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+  }
+  .svg-cell {
+    background: var(--surface2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: var(--text-muted);
+    padding: 2px;
+  }
+  .svg-cell.highlight {
+    background: rgba(212, 168, 67, 0.15);
+  }
+  .svg-cell.center {
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    background: linear-gradient(135deg, rgba(212, 168, 67, 0.08), rgba(124, 77, 255, 0.08));
+  }
+  .svg-cell .house-num {
+    font-size: 7px;
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+  .svg-cell .sign {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .svg-cell .planet {
+    font-size: 7px;
+    color: var(--gold);
+  }
+  .center-text {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .center-sub {
+    font-size: 8px;
+    color: var(--text-muted);
+  }
+  .planet-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  .planet-legend span {
+    font-size: 8px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+
+  /* Transit Panel */
+  .transit-panel {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    background: var(--surface);
+    margin-top: 12px;
+  }
+  .transit-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .transit-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    font-size: 9px;
+  }
+  .transit-item {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-muted);
+  }
+
+  /* Tab Panel */
+  .tab-panel {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    background: var(--surface);
+  }
+  .tab-bar {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 500;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-muted);
+  }
+  .tab-btn.active {
+    background: linear-gradient(135deg, rgba(124, 77, 255, 0.2), rgba(61, 90, 254, 0.15));
+    border-color: rgba(212, 168, 67, 0.2);
+    color: var(--gold);
+  }
+  .tab-content {
+    min-height: 180px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .tab-data-card {
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+  }
+  .tab-data-card .label {
+    font-size: 9px;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+  }
+  .tab-data-card .value {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* Dasha Timeline */
+  .dasha-section {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    background: var(--surface);
+    margin-bottom: 12px;
+  }
+  .dasha-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .dasha-bar {
+    display: flex;
+    height: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  .dasha-seg {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+  }
+  .dasha-seg.active { flex: 1.5; outline: 2px solid var(--gold); outline-offset: -2px; }
+  .dasha-seg.past { opacity: 0.5; }
+  .dasha-legend {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 8px;
+    color: var(--text-muted);
+    align-items: center;
+  }
+  .dasha-legend .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dasha-now {
+    font-size: 8px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: rgba(212, 168, 67, 0.15);
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* AI Section */
+  .ai-section {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(124, 77, 255, 0.06), rgba(61, 90, 254, 0.04));
+    margin-bottom: 12px;
+  }
+  .ai-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .ai-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+  }
+  .ai-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .ai-btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(124, 77, 255, 0.2), rgba(61, 90, 254, 0.15));
+    border: 1px solid rgba(212, 168, 67, 0.2);
+    color: var(--gold);
+  }
+
+  /* Remedies */
+  .remedies-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .remedy-card {
+    padding: 10px;
+    border-radius: 6px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+  }
+  .remedy-card .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .remedy-card .planet {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .remedy-card .sev {
+    font-size: 8px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .remedy-card .sev.high { background: rgba(211, 47, 47, 0.15); color: var(--red); }
+  .remedy-card .sev.med { background: rgba(255, 165, 0, 0.15); color: var(--orange); }
+  .remedy-card .sev.low { background: rgba(56, 142, 60, 0.15); color: var(--green); }
+  .remedy-card .desc {
+    font-size: 9px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* Chat */
+  .chat-mock {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    background: var(--surface);
+    margin-top: 12px;
+  }
+  .chat-msg {
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 11px;
+    max-width: 80%;
+  }
+  .chat-msg.user {
+    background: rgba(124, 77, 255, 0.12);
+    margin-left: auto;
+    border: 1px solid rgba(124, 77, 255, 0.2);
+  }
+  .chat-msg.bot {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+  }
+  .chat-input-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .chat-input {
+    flex: 1;
+    height: 34px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .chat-send {
+    width: 50px;
+    border-radius: 6px;
+    background: rgba(212, 168, 67, 0.12);
+    border: 1px solid rgba(212, 168, 67, 0.2);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Lal Kitab */
+  .lk-houses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .lk-house {
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+  }
+  .lk-house .hnum {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    background: rgba(212, 168, 67, 0.1);
+    border: 1px solid rgba(212, 168, 67, 0.2);
+    color: var(--gold);
+  }
+  .lk-house .hname { font-weight: 500; color: var(--text); }
+  .lk-house .hplanets { color: var(--text-muted); }
+  .lk-house .hcount {
+    font-size: 8px;
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+
+  /* ANNOTATIONS */
+  .annotations {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: rgba(212, 168, 67, 0.04);
+    border: 1px solid rgba(212, 168, 67, 0.08);
+  }
+  .annotation {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .annotation .pin {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .annotation strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* FLOW ARROW SECTION */
+  .flow-connect {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+  }
+  .flow-connect span {
+    font-size: 28px;
+    color: var(--gold);
+    opacity: 0.6;
+  }
+  .flow-connect .label {
+    font-size: 11px;
+    color: var(--text-muted);
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px dashed var(--border);
+    margin: 0 12px;
+  }
+
+  /* SIDE ANNOTATIONS (positioned) */
+  .screen-wrapper {
+    position: relative;
+  }
+  .note-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(212, 168, 67, 0.08);
+    border: 1px solid rgba(212, 168, 67, 0.12);
+    color: var(--gold-dim);
+    margin-top: 8px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero h2 { font-size: 24px; }
+    .grid { padding: 0 16px 32px; gap: 32px; }
+    .header-inner { padding: 12px 16px; }
+    .hero { padding: 32px 16px 24px; }
+    .flow-section { padding: 8px 16px; }
+    .flow-bar { flex-wrap: wrap; }
+    .dash-grid { grid-template-columns: 1fr; }
+    .remedies-grid { grid-template-columns: 1fr; }
+    .lk-houses { grid-template-columns: 1fr; }
+    .tab-content { grid-template-columns: 1fr; }
+    .mode-cards { flex-direction: column; }
+    .screen-body { padding: 16px; }
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 32px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="header-logo">🔮</div>
+      <h1>Astrologie</h1>
+      <span class="header-badge">PM Portfolio</span>
+    </div>
+    <div class="header-right">
+      <span><span class="header-dot"></span> Interactive Prototype</span>
+      <span>v1.0</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h2>Architect of Cosmic Destiny — Product Wireframe</h2>
+  <p class="hero-sub">Complete product design specification for a Vedic Astrology SaaS application. Full-stack Next.js dashboard with AI-powered insights, Vedic Kundali generation, and Lal Kitab remedies.</p>
+  <div class="hero-meta">
+    <span>📱 4 Screens</span>
+    <span>🔗 15+ Components</span>
+    <span>🎨 2 Themes (Vedic + Lal Kitab)</span>
+    <span>🤖 AI Integration</span>
+    <span>📊 5 Data Visualizations</span>
+  </div>
+</div>
+
+<!-- USER FLOW -->
+<div class="flow-section">
+  <div class="flow-bar">
+    <div class="flow-step active"><span class="num">1</span> Login</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step active"><span class="num">2</span> Mode Select</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step active"><span class="num">3</span> Input Form</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step active"><span class="num">4a</span> Vedic Dashboard</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step active"><span class="num">4b</span> Lal Kitab</div>
+  </div>
+</div>
+
+<!-- WIREFRAME GRID -->
+<div class="grid">
+
+  <!-- SCREEN 1: LOGIN -->
+  <div class="screen-card" id="login">
+    <div class="screen-header">
+      <div class="screen-title">
+        <h3>🔐 1. Authentication — Login Screen</h3>
+        <span class="screen-tag route">/login</span>
+        <span class="screen-tag pm">Auth Gateway</span>
+      </div>
+    </div>
+    <div class="screen-body">
+      <div class="mock">
+        <div class="mock-inner">
+          <div class="mock-login">
+            <div class="login-card">
+              <div class="login-orb">🔮</div>
+              <div class="login-title">Architect of Cosmic Destiny</div>
+              <div class="login-sub">Sign in to access your dashboard</div>
+              <div class="login-field">
+                <label>Username</label>
+                <div class="input-box" style="padding: 0 10px; display: flex; align-items: center; color: var(--text-muted); font-size: 12px;">admin</div>
+              </div>
+              <div class="login-field">
+                <label>Password</label>
+                <div class="input-box" style="padding: 0 10px; display: flex; align-items: center; color: var(--text-muted); font-size: 12px;">••••••</div>
+              </div>
+              <div class="login-btn">Sign In</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="annotations">
+        <div class="annotation">
+          <span class="pin">1</span>
+          <div><strong>Simple auth</strong> — client-side login (admin/admin) persisted via localStorage (<code>astro_auth</code> key)</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">2</span>
+          <div><strong>Session management</strong> — auto-redirects authenticated users to dashboard, "Logout" clears session and redirects back</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">3</span>
+          <div><strong>PM Note</strong> — Designed as a quick-access demo auth for portfolio showcasing. Production would integrate OAuth/SSO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOW ARROW -->
+  <div class="flow-connect">
+    <span>↓</span>
+    <span class="label">Successful Login → Auto-redirect</span>
+    <span>↓</span>
+  </div>
+
+  <!-- SCREEN 2: MODE SELECTOR -->
+  <div class="screen-card" id="mode-select">
+    <div class="screen-header">
+      <div class="screen-title">
+        <h3>🎯 2. Mode Selection — Landing Page</h3>
+        <span class="screen-tag route">/</span>
+        <span class="screen-tag pm">User Onboarding</span>
+      </div>
+    </div>
+    <div class="screen-body">
+      <div class="mock">
+        <div class="mock-inner">
+          <div class="mock-mode">
+            <div class="mode-orb">🔮</div>
+            <div class="mode-title">Architect of Cosmic Destiny</div>
+            <div class="mode-sub">Choose your path to celestial wisdom</div>
+            <div class="mode-cards">
+              <div class="mode-card">
+                <div class="icon">🪐</div>
+                <h4>Vedic Kundli</h4>
+                <p>Full Vedic analysis with Lagna chart, planetary positions, Nakshatra insights, Dasha cycles, and AI predictions.</p>
+                <div class="mode-tags">
+                  <span class="mode-tag">5 Tabs</span>
+                  <span class="mode-tag">AI Insights</span>
+                  <span class="mode-tag">Dasha Analysis</span>
+                </div>
+              </div>
+              <div class="mode-card lal">
+                <div class="icon">🪷</div>
+                <h4>Lal Kitab</h4>
+                <p>Practical Red Book remedies with house-wise rules, severity-ranked upayas, mantras, and daily sadhna practices.</p>
+                <div class="mode-tags">
+                  <span class="mode-tag">12 Houses</span>
+                  <span class="mode-tag">Remedies</span>
+                  <span class="mode-tag">Daily Upayas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="annotations">
+        <div class="annotation">
+          <span class="pin">1</span>
+          <div><strong>Dual-mode architecture</strong> — users choose between traditional Vedic astrology and the practical Lal Kitab (Red Book) system</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">2</span>
+          <div><strong>Hover-to-explore</strong> — cards scale up (105%) on hover with gradient backgrounds, making the choice feel tactile</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">3</span>
+          <div><strong>PM Note</strong> — This screen acts as a "product funnel top" — reducing cognitive load by clearly separating two complex domains</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOW ARROW -->
+  <div class="flow-connect">
+    <span>↓</span>
+    <span class="label">Select Mode → Birth Details Form</span>
+    <span>↓</span>
+  </div>
+
+  <!-- SCREEN 3: INPUT FORM -->
+  <div class="screen-card" id="input-form">
+    <div class="screen-header">
+      <div class="screen-title">
+        <h3>📝 3. Birth Details — Data Entry Form</h3>
+        <span class="screen-tag route">/ (inline)</span>
+        <span class="screen-tag pm">Data Collection</span>
+      </div>
+    </div>
+    <div class="screen-body">
+      <div class="mock">
+        <div class="mock-inner" style="display: flex; justify-content: center;">
+          <div style="width: 380px; max-width: 100%;">
+            <div style="text-align: center; margin-bottom: 16px;">
+              <div style="font-size: 28px; margin-bottom: 6px;">🔮</div>
+              <div style="font-size: 15px; font-weight: 700; color: var(--gold);">Enter Birth Details</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Generate your comprehensive Vedic Kundali</div>
+            </div>
+            <div style="margin-bottom: 10px;">
+              <label style="font-size: 10px; color: var(--text-muted); display: block; margin-bottom: 3px;">Name</label>
+              <div style="height: 34px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); padding: 0 10px; display: flex; align-items: center; font-size: 12px; color: var(--text-muted);">Your name</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 10px;">
+              <div>
+                <label style="font-size: 10px; color: var(--text-muted); display: block; margin-bottom: 3px;">Day</label>
+                <div style="height: 34px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); display: flex; align-items: center; padding: 0 8px; font-size: 11px; color: var(--text-muted); justify-content: space-between;">
+                  <span>15</span>
+                  <span style="font-size: 8px;">▼</span>
+                </div>
+              </div>
+              <div>
+                <label style="font-size: 10px; color: var(--text-muted); display: block; margin-bottom: 3px;">Month</label>
+                <div style="height: 34px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); display: flex; align-items: center; padding: 0 8px; font-size: 11px; color: var(--text-muted); justify-content: space-between;">
+                  <span>8</span>
+                  <span style="font-size: 8px;">▼</span>
+                </div>
+              </div>
+              <div>
+                <label style="font-size: 10px; color: var(--text-muted); display: block; margin-bottom: 3px;">Year</label>
+                <div style="height: 34px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); padding: 0 8px; display: flex; align-items: center; font-size: 11px; color: var(--text-muted);">1990</div>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px;">
+              <div>
+                <label style="font-size: 10px; color: var(--text-muted); display: block; margin-bottom: 3px;">Hour</label>
+                <div style="height: 34px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); display: flex; align-items: center; padding: 0 8px; font-size: 11px; color: var(--text-muted); justify-content: space-between;">
+                  <span>10</span>
+                  <span style="font-size: 8px;">▼</span>
+                </div>
+              </div>
+              <div>
+                <label style="font-size: 10px; color: var(--text-muted); display: block; margin-bottom: 3px;">Minute</label>
+                <div style="height: 34px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); display: flex; align-items: center; padding: 0 8px; font-size: 11px; color: var(--text-muted); justify-content: space-between;">
+                  <span>30</span>
+                  <span style="font-size: 8px;">▼</span>
+                </div>
+              </div>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <label style="font-size: 10px; color: var(--text-muted); display: block; margin-bottom: 3px;">Birth City</label>
+              <div style="height: 34px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface2); display: flex; align-items: center; padding: 0 10px; font-size: 11px; color: var(--text-muted); justify-content: space-between;">
+                <span>Mumbai, Maharashtra</span>
+                <span style="font-size: 8px;">▼</span>
+              </div>
+            </div>
+            <div style="height: 38px; border-radius: 8px; background: linear-gradient(135deg, rgba(124, 77, 255, 0.2), rgba(61, 90, 254, 0.15)); border: 1px solid rgba(212, 168, 67, 0.2); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--gold);">🔮 Generate Kundali</div>
+          </div>
+        </div>
+      </div>
+      <div class="annotations">
+        <div class="annotation">
+          <span class="pin">1</span>
+          <div><strong>NASA JPL ephemeris</strong> — planetary positions calculated via <code>astronomy-engine</code> (DE430/DE431), Lahiri ayanamsa with precession correction</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">2</span>
+          <div><strong>10 preset Indian cities</strong> — with lat/lng coordinates for accurate chart calculation. Users select from a dropdown</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">3</span>
+          <div><strong>PM Note</strong> — Form disappears after submission (replaced by dashboard). Users can go "Back" to start over. Caches AI predictions per birth details</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOW ARROW -->
+  <div class="flow-connect">
+    <span>↓</span>
+    <span class="label">Generate → Vedic Dashboard (4a) <span style="opacity: 0.5; margin: 0 4px;">or</span> Lal Kitab (4b)</span>
+    <span>↓</span>
+  </div>
+
+  <!-- SCREEN 4a: VEDIC DASHBOARD -->
+  <div class="screen-card" id="vedic">
+    <div class="screen-header">
+      <div class="screen-title">
+        <h3>🪐 4a. Vedic Kundli — Main Dashboard</h3>
+        <span class="screen-tag route">/ (vedic)</span>
+        <span class="screen-tag pm">Core Feature</span>
+      </div>
+    </div>
+    <div class="screen-body">
+      <div class="mock">
+        <div class="mock-inner">
+          <!-- Top Bar -->
+          <div class="dash-topbar">
+            <div class="dash-topbar-left">
+              <span class="dash-back">← Back</span>
+              <span class="dash-mode-badge">🪐 Vedic Kundli</span>
+            </div>
+            <span style="font-size: 10px; padding: 3px 8px; border-radius: 4px; background: rgba(211, 47, 47, 0.08); color: var(--red); border: 1px solid rgba(211, 47, 47, 0.1);">Logout</span>
+          </div>
+
+          <!-- 3-Column Grid -->
+          <div class="dash-grid">
+            <!-- Left: Chart -->
+            <div>
+              <div class="chart-panel">
+                <div class="chart-title">♌ Lagna · Magha Nak.</div>
+                <div class="svg-grid">
+                  <div class="svg-cell"><span class="house-num">H10</span><span class="sign">♑</span><span class="planet">♀</span></div>
+                  <div class="svg-cell"><span class="house-num">H11</span><span class="sign">♒</span><span class="planet">☿</span></div>
+                  <div class="svg-cell"><span class="house-num">H12</span><span class="sign">♓</span><span class="planet">☽</span></div>
+                  <div class="svg-cell highlight"><span class="house-num">H1</span><span class="sign">♌</span><span class="planet">♄</span></div>
+                  <div class="svg-cell"><span class="house-num">H9</span><span class="sign">♐</span><span class="planet">♂</span></div>
+                  <div class="svg-cell center"><div class="center-text">Lagna</div><div class="center-sub">Leo · Magha</div></div>
+                  <div class="svg-cell center"><div class="center-text">Suṅpha</div><div class="center-sub">4th House</div></div>
+                  <div class="svg-cell"><span class="house-num">H2</span><span class="sign">♍</span><span class="planet">♀</span></div>
+                  <div class="svg-cell"><span class="house-num">H8</span><span class="sign">♏</span><span class="planet">♃</span></div>
+                  <div class="svg-cell"><span class="house-num">H7</span><span class="sign">♉</span><span class="planet">☉</span></div>
+                  <div class="svg-cell"><span class="house-num">H6</span><span class="sign">♈</span><span class="planet">♄</span></div>
+                  <div class="svg-cell"><span class="house-num">H3</span><span class="sign">♎</span><span class="planet">♂</span></div>
+                  <div class="svg-cell"><span class="house-num">H5</span><span class="sign">♊</span><span class="planet">♃</span></div>
+                  <div class="svg-cell"><span class="house-num">H4</span><span class="sign">♋</span><span class="planet">☿</span></div>
+                </div>
+                <div class="planet-legend">
+                  <span>☉ Sun H7</span>
+                  <span>☽ Moon H12</span>
+                  <span>♂ Mars H9</span>
+                  <span>☿ Mercury H4</span>
+                  <span>♃ Jupiter H8</span>
+                  <span>♀ Venus H2</span>
+                  <span>♄ Saturn H1</span>
+                </div>
+              </div>
+              <div class="transit-panel">
+                <div class="transit-title">🌍 Current Transit</div>
+                <div class="transit-row">
+                  <div class="transit-item"><span>☉ Sun</span><span>♉ 8°12'</span></div>
+                  <div class="transit-item"><span>☽ Moon</span><span>♍ 22°45'</span></div>
+                  <div class="transit-item"><span>♂ Mars</span><span>♋ 14°30' ← near birth</span></div>
+                  <div class="transit-item"><span>♃ Jupiter</span><span>♈ 3°18'</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Tabs -->
+            <div class="tab-panel">
+              <div class="tab-bar">
+                <span class="tab-btn active">☉ Overview</span>
+                <span class="tab-btn">♄ Career</span>
+                <span class="tab-btn">♀ Love</span>
+                <span class="tab-btn">♂ Health</span>
+                <span class="tab-btn">♃ Wealth</span>
+              </div>
+              <div class="tab-content">
+                <div class="tab-data-card">
+                  <div class="label">Lagna</div>
+                  <div class="value">Leo (♌)</div>
+                </div>
+                <div class="tab-data-card">
+                  <div class="label">Nakshatra</div>
+                  <div class="value">Magha</div>
+                </div>
+                <div class="tab-data-card">
+                  <div class="label">Moon Sign</div>
+                  <div class="value">Pisces (♓)</div>
+                </div>
+                <div class="tab-data-card">
+                  <div class="label">Current Dasha</div>
+                  <div class="value">Venus Mahadasha</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dasha Timeline -->
+          <div class="dasha-section">
+            <div class="dasha-title">🕉 Vimshottari Dasha Timeline</div>
+            <div class="dasha-bar">
+              <div class="dasha-seg" style="background: #7c4dff;">Ket</div>
+              <div class="dasha-seg" style="background: #e91e63;">Ven</div>
+              <div class="dasha-seg past" style="background: #ff9800;">Sun</div>
+              <div class="dasha-seg past" style="background: #b0bec5;">Moo</div>
+              <div class="dasha-seg past" style="background: #f44336;">Mar</div>
+              <div class="dasha-seg active" style="background: #7b1fa2;">Rah</div>
+              <div class="dasha-seg" style="background: #ffc107;">Jup</div>
+              <div class="dasha-seg" style="background: #37474f;">Sat</div>
+              <div class="dasha-seg" style="background: #4caf50;">Mer</div>
+            </div>
+            <div class="dasha-legend">
+              <span><span class="dot" style="background: #7b1fa2;"></span> Rahu (Current)</span>
+              <span><span class="dot" style="background: #ff9800;"></span> Sun (Past)</span>
+              <span class="dasha-now">◀ now</span>
+            </div>
+          </div>
+
+          <!-- AI Section -->
+          <div class="ai-section">
+            <div class="ai-row">
+              <div>
+                <div class="ai-title">🪄 AI-Generated Reading</div>
+                <div class="ai-sub">Deep Vedic insights generated for each area of life</div>
+              </div>
+              <span class="ai-btn">✨ Generate Full AI Reading</span>
+            </div>
+          </div>
+
+          <!-- Remedies -->
+          <div style="border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: linear-gradient(135deg, rgba(124, 77, 255, 0.08), rgba(61, 90, 254, 0.06));">
+            <div class="ai-title" style="margin-bottom: 8px;">🪷 Upayas (Remedies)</div>
+            <div class="remedies-grid">
+              <div class="remedy-card">
+                <div class="top">
+                  <span class="planet">Rahu in H12</span>
+                  <span class="sev high">HIGH</span>
+                </div>
+                <div class="desc">Chant Rahu Beej mantra 108x daily. Donate black sesame seeds on Saturdays.</div>
+              </div>
+              <div class="remedy-card">
+                <div class="top">
+                  <span class="planet">Saturn in H1</span>
+                  <span class="sev med">MEDIUM</span>
+                </div>
+                <div class="desc">Feed crows on Wednesdays. Wear blue sapphire if eligible.</div>
+              </div>
+              <div class="remedy-card">
+                <div class="top">
+                  <span class="planet">Mars in H9</span>
+                  <span class="sev low">LIGHT</span>
+                </div>
+                <div class="desc">Recite Hanuman Chalisa on Tuesdays. Donate red lentils.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat -->
+          <div class="chat-mock">
+            <div style="font-size: 11px; font-weight: 600; color: var(--gold); margin-bottom: 8px;">💬 Ask Your Chart</div>
+            <div class="chat-msg bot">Welcome! Ask me anything about your chart — relationships, career timing, or remedies.</div>
+            <div class="chat-msg user">What does my 7th house Venus indicate about relationships?</div>
+            <div class="chat-msg bot">Your 7th house Venus in Taurus suggests a steady, loyal partnership...</div>
+            <div class="chat-input-row">
+              <div class="chat-input"></div>
+              <div class="chat-send">Ask</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="annotations">
+        <div class="annotation">
+          <span class="pin">1</span>
+          <div><strong>North Indian Lagna Chart</strong> — custom SVG 4x4 grid with house numbers, zodiac signs, and planet placements. Highlighted Lagna with glow-pulse animation</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">2</span>
+          <div><strong>5-tab navigation</strong> — Overview, Career & Karma, Love & Union, Health & Vitality, Wealth / Artha — each with AI-generated insights and data cards</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">3</span>
+          <div><strong>Dasha Timeline</strong> — full Vimshottari Dasha sequence with color-coded planet segments, "now" indicator, and Antardasha breakdown bar</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">4</span>
+          <div><strong>AI + Remedies + Chat</strong> — three-layer intelligence engine: Groq LLaMA 3.3 70B for predictions, 60+ Lal Kitab rules engine, and contextual Q&A with 6-turn memory</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">5</span>
+          <div><strong>PM Note</strong> — This is the "core product" screen. Designed as a single scrollable page with clear information hierarchy. The 3-column grid separates visualization (chart), analysis (tabs), and recommendations (remedies)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOW ARROW -->
+  <div class="flow-connect">
+    <span>↓</span>
+    <span class="label">Alternative Mode → Lal Kitab Dashboard</span>
+    <span>↓</span>
+  </div>
+
+  <!-- SCREEN 4b: LAL KITAB -->
+  <div class="screen-card" id="lalkitab">
+    <div class="screen-header">
+      <div class="screen-title">
+        <h3>📕 4b. Lal Kitab — Red Book Dashboard</h3>
+        <span class="screen-tag route">/ (lalkitab)</span>
+        <span class="screen-tag pm">Secondary Feature</span>
+      </div>
+    </div>
+    <div class="screen-body">
+      <div class="mock">
+        <div class="mock-inner">
+          <div class="dash-topbar">
+            <div class="dash-topbar-left">
+              <span class="dash-back">← Back</span>
+              <span class="dash-mode-badge" style="background: rgba(255, 68, 68, 0.1); color: var(--orange);">📕 Lal Kitab</span>
+            </div>
+          </div>
+
+          <div class="dash-grid">
+            <div>
+              <div class="chart-panel">
+                <div class="chart-title" style="color: var(--orange);">📕 Leo Lagna · Lal Kitab</div>
+                <div class="svg-grid" style="width: 200px; height: 200px;">
+                  <div class="svg-cell"><span class="sign">♑</span></div>
+                  <div class="svg-cell"><span class="sign">♒</span></div>
+                  <div class="svg-cell"><span class="sign">♓</span></div>
+                  <div class="svg-cell highlight"><span class="sign">♌</span></div>
+                  <div class="svg-cell"><span class="sign">♐</span></div>
+                  <div class="svg-cell center"><span class="center-text" style="font-size: 8px;">Lagna</span></div>
+                  <div class="svg-cell center"><span class="center-text" style="font-size: 8px;">4th</span></div>
+                  <div class="svg-cell"><span class="sign">♍</span></div>
+                  <div class="svg-cell"><span class="sign">♏</span></div>
+                  <div class="svg-cell"><span class="sign">♉</span></div>
+                  <div class="svg-cell"><span class="sign">♈</span></div>
+                  <div class="svg-cell"><span class="sign">♎</span></div>
+                  <div class="svg-cell"><span class="sign">♊</span></div>
+                  <div class="svg-cell"><span class="sign">♋</span></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="tab-panel">
+                <div class="ai-title" style="color: var(--orange); margin-bottom: 8px;">📊 Lal Kitab Overview</div>
+                <div style="font-size: 11px; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px;">
+                  Mars in 12th from Lagna... Jupiter in 4th aspect on 7th... Saturn in Lagna indicates delay but steady growth.
+                </div>
+                <div style="font-size: 11px; font-weight: 600; color: var(--text); margin-bottom: 6px;">🏠 House-wise Analysis</div>
+                <div class="lk-houses">
+                  <div class="lk-house">
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                      <span class="hnum">1</span>
+                      <span class="hname">Lagna</span>
+                    </div>
+                    <span class="hplanets">♄</span>
+                    <span class="hcount" style="background: rgba(255, 165, 0, 0.15); color: var(--orange);">2 rules</span>
+                  </div>
+                  <div class="lk-house">
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                      <span class="hnum">2</span>
+                      <span class="hname">Wealth</span>
+                    </div>
+                    <span class="hplanets">♀</span>
+                    <span class="hcount" style="background: rgba(56, 142, 60, 0.15); color: var(--green);">1 rule</span>
+                  </div>
+                  <div class="lk-house">
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                      <span class="hnum">7</span>
+                      <span class="hname">Marriage</span>
+                    </div>
+                    <span class="hplanets">☉</span>
+                    <span class="hcount" style="background: rgba(211, 47, 47, 0.15); color: var(--red);">3 rules</span>
+                  </div>
+                  <div class="lk-house">
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                      <span class="hnum">12</span>
+                      <span class="hname">Loss</span>
+                    </div>
+                    <span class="hplanets">♂</span>
+                    <span class="hcount" style="background: rgba(211, 47, 47, 0.15); color: var(--red);">2 rules</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Predictions for Lal Kitab -->
+          <div style="border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: linear-gradient(135deg, rgba(124, 77, 255, 0.06), rgba(61, 90, 254, 0.04)); margin-top: 12px;">
+            <div class="ai-title" style="color: var(--orange); margin-bottom: 8px;">🪄 AI Lal Kitab Predictions</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <div class="remedy-card">
+                <div class="planet">📕 Life Path & Karma</div>
+                <div class="desc" style="margin-top: 4px;">Your Saturn in Lagna... click to generate AI reading</div>
+                <span class="ai-btn" style="display: inline-block; margin-top: 6px; padding: 3px 10px; font-size: 9px;">Generate</span>
+              </div>
+              <div class="remedy-card">
+                <div class="planet">💞 Relationships</div>
+                <div class="desc" style="margin-top: 4px;">Venus in 2nd house aspecting... click to generate AI reading</div>
+                <span class="ai-btn" style="display: inline-block; margin-top: 6px; padding: 3px 10px; font-size: 9px;">Generate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="annotations">
+        <div class="annotation">
+          <span class="pin">1</span>
+          <div><strong>Lal Kitab accent color</strong> — orange-red (#FF6B35) replaces gold throughout for visual differentiation between the two modes</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">2</span>
+          <div><strong>House-wise analysis</strong> — 12 expandable rows with severity-colored indicators (🔴 Critical / 🟡 Moderate / 🟢 Light), each with detailed rule explanations</div>
+        </div>
+        <div class="annotation">
+          <span class="pin">3</span>
+          <div><strong>PM Note</strong> — Lal Kitab targets users who want <em>actionable remedies</em> rather than theoretical readings. The 12-house accordion makes complex rules browsable</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Astrologie — Product Wireframe · Built for PM Portfolio · May 2026
+</div>
+
+</body>
+</html>

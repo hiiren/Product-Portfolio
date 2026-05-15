@@ -16,7 +16,7 @@ export default function Contact() {
 
         <div className="mx-auto mt-12 grid max-w-2xl gap-6 sm:grid-cols-2">
           <a
-            href="mailto:hiiren.rathod@example.com"
+            href="mailto:hiirenrathod126@gmail.com"
             className="flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 p-8 text-center transition-all hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800"
           >
             <svg
@@ -38,7 +38,7 @@ export default function Contact() {
               Email
             </span>
             <span className="text-sm text-zinc-500 dark:text-zinc-400">
-              hiiren.rathod@example.com
+              hiirenrathod126@gmail.com
             </span>
           </a>
           <a
@@ -71,7 +71,7 @@ export default function Contact() {
             </span>
           </a>
           <a
-            href="https://github.com/hiirenrathod"
+            href="https://github.com/hiiren/Product-Portfolio"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 p-8 text-center transition-all hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800"

@@ -43,6 +43,7 @@ export default function LiveDemoEmbed({
           className="w-full border-0"
           style={{ height: loaded ? '500px' : '0', opacity: loaded ? 1 : 0 }}
           onLoad={() => setLoaded(true)}
+          sandbox="allow-scripts allow-same-origin allow-popups"
           allow="accelerometer; camera; encrypted-media; geolocation; gyroscope; microphone"
           title={label || 'Live Demo'}
         />

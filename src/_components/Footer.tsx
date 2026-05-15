@@ -23,7 +23,7 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
-            href="https://github.com/hiirenrathod"
+            href="https://github.com/hiiren/Product-Portfolio"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
