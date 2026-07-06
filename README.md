@@ -58,8 +58,8 @@ Each product also has a detailed PRD slide deck covering executive summary, pers
 
 | Metric | Result | Product |
 |--------|--------|---------|
-| Lead growth | 20 → 70/month **(3.5×)** | Fuds Digital Platform |
-| Form conversion | 5–7 → 12–18/week **(2.5×)** | Fuds Booking Form |
+| Lead growth | 200 → 700/month **(3.5×)** | Fuds Digital Platform |
+| Form conversion | 500–700 → 12–18/week **(2.5×)** | Fuds Booking Form |
 | Lead-to-job conversion | **60%** | Fuds (via upfront pricing) |
 | Repeat retention | **~40%** | Fuds (via WhatsApp automation) |
 | Order coordination time | 30 mins → **near zero** | Fuds Field Service Dashboard |
